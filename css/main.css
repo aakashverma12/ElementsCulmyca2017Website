@@ -5,11 +5,14 @@
 /*************************
 *******Typography******
 **************************/
+* {
+  border: px solid red;
+}
 
 body {
   font-family: 'Dosis', sans-serif;
   font-size: 17px;
-  color: #fff
+  color: #fff;
 }
 
 
@@ -102,7 +105,7 @@ h2 {
 }
 
 .navbar-brand {
-  background-color: #1B7B98;
+  background-color: #05cc47;
   height: 90px;
   margin-bottom: 20px;
   position: relative;
@@ -115,7 +118,7 @@ h2 {
 }
 
 .navbar-right {
-  background-color: #1B7B98;
+  background-color: #05cc47;
   padding:0 95px 0 0;
   opacity: .9
 }
@@ -138,7 +141,7 @@ h2 {
 
 
 .fixed-menu {
-  background-color: #1B7B98;
+  background-color: #05cc47;
   position: fixed;
   top: 0;
 }
@@ -215,7 +218,7 @@ h2 {
 #main-slider 
 .carousel-caption a {
   font-size: 22px;
-  color: #2da1c5
+  color: #05cc47
 }
 
 #main-slider 
@@ -240,8 +243,8 @@ h2 {
 
 #main-slider 
 .carousel-indicators li {
-  background-color:#1B7B98;
-  border: 1px solid #1B7B98;
+  background-color:#05cc47;
+  border: 1px solid #05cc47;
 }
 
 #main-slider 
@@ -754,7 +757,69 @@ h2 {
 }
 
 #footer a:hover {
-  color:#1B7B98
+  color:#05cc47
 }
 
 
+/* Added By Aakash
+The Flash Page CSS*/
+
+body, html {
+  height: 100%;
+}
+
+.courosal {
+  animation-name: yo;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transition: all .5s;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  z-index: +1000;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0);
+  transform: translate3d(0);
+}
+
+@keyframes yo {
+  0% {background-image: url('images/9.jpg');}
+  25% {background-image: url('images/10.jpg');}
+  50% {background-image: url('images/11.jpg');}
+  75% {background-image: url('images/2.jpg');}
+  100%{background-image: url('images/9.jpg');}
+}
+
+.welcome {
+  text-align: center;
+  font-size: 40px;
+  padding:5%;
+  padding-top: 15%;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0.34);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(160, 167, 188, 0.61));
+}
+
+.start {
+  background-color: rgba(255,255,255,.15);
+  margin-top: 10%;
+  padding: 2%;
+  padding-left:10% ;
+  padding-right:10% ;
+  border: 0px solid black;
+  border-radius:0px 0px 0px 0px;
+  transition: all .2s;
+  box-shadow: 2px 2px 7px 1px black;
+}
+
+.start:hover {
+  background-color: #05cc47;
+  border-radius:0px 38px 38px 0px; 
+}
+
+#welcome-text {
+  font-family: 'Raleway', sans-serif;
+}
