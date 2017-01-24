@@ -49,6 +49,14 @@
 				hours = (String(hours).length >= 2) ? hours : "0" + hours;
 				minutes = (String(minutes).length >= 2) ? minutes : "0" + minutes;
 				seconds = (String(seconds).length >= 2) ? seconds : "0" + seconds;
+				days = (String(days).length >= 3) ? days : "0" + days;
+				hours = (String(hours).length >= 3) ? hours : "0" + hours;
+				minutes = (String(minutes).length >= 3) ? minutes : "0" + minutes;
+				seconds = (String(seconds).length >= 3) ? seconds : "0" + seconds;
+				days = (String(days).length >= 4) ? days : "0" + days;
+				hours = (String(hours).length >= 4) ? hours : "0" + hours;
+				minutes = (String(minutes).length >= 4) ? minutes : "0" + minutes;
+				seconds = (String(seconds).length >= 4) ? seconds : "0" + seconds;
 			}
 			
 			//update the countdown's html values.
