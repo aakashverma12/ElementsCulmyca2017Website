@@ -276,8 +276,35 @@
 
 }
 
+
+
+
+
+@media (max-width: 480px){
+  #countdown li {
+    font-size: 16px;
+    margin-right: 15px;
+    width: 70px;
+    position: relative;
+    top: -140px;
+  }
+  
+  #countdown li span {
+    font-size: 22px;
+    height: 40px;
+    line-height: 45px;
+    width: 70px;
+  }
+
+  #countdown li:before, 
+  #countdown li:after {
+    top: 18px
+  }
+}
+
+
 /* XS Portrait */
-@media (max-width: 479px) {
+@media (max-width: 400px) {
 
   .main-nav .container {
     display: none;
@@ -344,14 +371,16 @@
   #countdown li {
     font-size: 14px;
     margin-right: 15px;
-    width: 45px;
+    width: 60px;
+    position: relative;
+    top: -125px;
   }
 
   #countdown li span {
     font-size: 20px;
     height: 45px;
     line-height: 45px;
-    width: 45px;
+    width: 60px;
   }
 
   #countdown li:before, 
@@ -359,18 +388,6 @@
     top: 18px
   }
 
-  .cart {
-    right:-209px;
-  }
-
-  .cart a {
-    font-size: 18px;
-  }
-
-  .cart a i {
-    font-size: 20px;
-    padding:12px;
-  }
 
     /*event */
   .single-event {
@@ -447,5 +464,27 @@
     background-size: cover;
   }
 
+}
+
+@media (max-width: 360px){
+  #countdown li {
+    font-size: 12px;
+    margin-right: 15px;
+    width: 45px;
+    position: relative;
+    top: -110px;
+  }
+  
+  #countdown li span {
+    font-size: 16px;
+    height: 35px;
+    line-height: 45px;
+    width: 45px;
+  }
+
+  #countdown li:before, 
+  #countdown li:after {
+    top: 18px
+  }
 }
 
