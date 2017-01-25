@@ -265,7 +265,6 @@ h2 {
   position: relative;
   overflow: hidden;
   padding: 130px 0 100px;
-  background-attachment: fixed;
 }
 
 .watch {
@@ -722,7 +721,7 @@ h2 {
 
 #contact-section .btn-primary {
   background-color: #373737;
-  color: #ffffff;
+  color: #fffffff;
   border: none;
   font-size: 24px;
   padding: 6px 42px;
