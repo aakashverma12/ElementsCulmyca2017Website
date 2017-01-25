@@ -105,7 +105,7 @@ h2 {
 }
 
 .navbar-brand {
-  background-color: #05cc47;
+  background-color: #428bca;
   height: 90px;
   margin-bottom: 20px;
   position: relative;
@@ -118,7 +118,7 @@ h2 {
 }
 
 .navbar-right {
-  background-color: #05cc47;
+  background-color: #428bca;
   padding:0 95px 0 0;
   opacity: .9
 }
@@ -141,7 +141,7 @@ h2 {
 
 
 .fixed-menu {
-  background-color: #05cc47;
+  background-color: #428bca;
   position: fixed;
   top: 0;
 }
@@ -218,7 +218,7 @@ h2 {
 #main-slider 
 .carousel-caption a {
   font-size: 22px;
-  color: #05cc47
+  color: #428bca
 }
 
 #main-slider 
@@ -243,8 +243,8 @@ h2 {
 
 #main-slider 
 .carousel-indicators li {
-  background-color:#05cc47;
-  border: 1px solid #05cc47;
+  background-color:#428bca;
+  border: 1px solid #428bca;
 }
 
 #main-slider 
@@ -756,7 +756,7 @@ h2 {
 }
 
 #footer a:hover {
-  color:#05cc47
+  color:#428bca
 }
 
 
