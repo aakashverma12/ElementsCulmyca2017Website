@@ -306,15 +306,13 @@ h2 {
   position: relative;
   display: block;
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 600;
   height: 60px;
   line-height: 79px;
   width: 60px;
 }
 
-#debitcard {
-  position: relative;
-}
+
  
 
  /*************************
