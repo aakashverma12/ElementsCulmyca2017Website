@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Payment Page || Elements Culmyca</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body background="css/images/18.jpg" style="background-attachment: fixed;">
+<div class="container row" >
+<div class="col-md-2"></div>
+	<div class="col-md-10 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.52);color:white;padding: 5%">
+	<h1>Hi, Wanna Register? Fill out this form</h1>
+		<form id="payment">
+		<div class="form-group">
+			<label for="Phone-number">Phone Number</label> 
+			<input name="phone" type="tel" required="true" pattern="^\d{10}$" placeholder="Phone Number" class="form-control" style="width: 50%">
+		</input><br>
+		</div>
+		<div class="form-group">
+			<label for="Name">Full Name</label>
+			<input name="name" type="name" class="form-control" style="width: 50%" required="true" placeholder="Name"></input>
+		</div>
+		<div class="form-group">
+			<label for="Email">Email</label>
+			<input name="name" type="email" class="form-control" style="width: 50%" required="true" placeholder="Email"></input>
+		</div>
+		<div class="form-group">
+			<label for="college">College</label>
+			<input name="college" type="text" class="form-control" style="width: 50%" required="true" placeholder="College"></input>
+		</div>
+		<div class="form-group">Payment: &nbsp;
+			<label class="radio-inline">
+				<input type="radio" name="payment" class="online-radio">Online</input>
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="payment" class="offline-radio">Offline</input>
+			</label>
+		</div><br>
+		<div class="form-group transaction" style="display: none">
+			<label for="Transaction">Transaction Id</label>
+			<input name="college" type="text" class="form-control" style="width: 50%" required="true"
+			 placeholder="Transaction id">
+			</input><br>
+		</div>
+		<button type="submit" class="btn-primary btn-lg" id="submit-btn">
+			Register
+		</button>
+		</form>
+	</div>	
+	<div class="col-md-2"></div>
+</div>
+</body>
+    <script type="text/javascript" src="js/jquery.js"></script>
+<script>
+$('.online-radio').focus(function() {
+	$('.transaction').css({"display":"initial"})
+});
+$('.offline-radio').focus(function() {
+	$('.transaction').css({"display":"none"})
+})
+</script>
+</html>
