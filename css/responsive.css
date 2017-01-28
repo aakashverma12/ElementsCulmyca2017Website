@@ -115,9 +115,9 @@
   .twit {
     left: -5%;
   }
-
-
 }
+
+
 
 /* xs */
 @media (max-width: 767px) {
@@ -272,6 +272,10 @@
   .about-content {
     width: 100%;    
     padding: 70px 25px 110px;
+  }
+
+  #credit-card {
+    opacity: 0;
   }
 
 }
