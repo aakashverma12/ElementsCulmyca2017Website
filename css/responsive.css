@@ -51,7 +51,9 @@
     z-index: 10;
   }
 
-
+ .event-nav {
+  font-size: 27px;
+ }
 }
 
 /* sm */
@@ -114,6 +116,10 @@
 
   .twit {
     left: -5%;
+  }
+
+  .event-nav {
+  font-size: 27px;
   }
 }
 
@@ -304,6 +310,10 @@
   #countdown li:after {
     top: 18px
   }
+
+  .event-nav {
+  font-size: 27px;
+  }
 }
 
 
@@ -490,5 +500,10 @@
   #countdown li:after {
     top: 18px
   }
+
+  .event-nav {
+  font-size: 27px;
+  }
+  
 }
 

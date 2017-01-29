@@ -22,8 +22,10 @@ jQuery(function($) {'use strict',
 			$(window).on('scroll', function(){
 				if( $(window).scrollTop()>405 ){
 					$('.main-nav').addClass('fixed-menu animated slideInDown');
+					$('.event-nav').addClass('fixed-event-nav');
 				} else {
 					$('.main-nav').removeClass('fixed-menu animated slideInDown');
+					$('.event-nav').removeClass('fixed-event-nav');
 				}
 			});
 		}else{
@@ -56,7 +58,7 @@ jQuery(function($) {'use strict',
 		menuToggle();
 	});
 
-	$('.main-nav ul').onePageNav({
+	$('.main-nav ul, .arrow').onePageNav({
 		currentClass: 'active',
 	    changeHash: false,
 	    scrollSpeed: 900,

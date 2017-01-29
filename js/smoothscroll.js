@@ -17,7 +17,7 @@ function ssc_init() {
   if (top != self) {
     ssc_frame = true
   } else if (r > n && (e.offsetHeight <= n || t.offsetHeight <= n)) {
-    ssc_root.style.height = "auto";
+    ssc_root.style.height = "100%";
     if (ssc_root.offsetHeight <= n) {
       var i = document.createElement("div");
       i.style.clear = "both";
