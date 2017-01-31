@@ -217,20 +217,20 @@
 							<form id="payment">
 							<div class="form-group">
 								<label for="Phone-number">Phone Number</label> 
-								<input name="phone" type="tel" required="true" pattern="^\d{10}$" placeholder="Phone Number" class="form-control" style="width: 50%">
+								<input name="phone" type="tel" required="true" id="phone-no" pattern="^\d{10}$" placeholder="Phone Number" class="form-control" style="width: 50%">
 							</input>
 							</div>
 							<div class="form-group">
 								<label for="Name">Full Name</label>
-								<input name="name" type="name" class="form-control" style="width: 50%" required="true" placeholder="Name"></input>
+								<input name="name" type="name" class="form-control" id="fullname" style="width: 50%" required="true" placeholder="Name"></input>
 							</div>
 							<div class="form-group">
 								<label for="Email">Email</label>
-								<input name="name" type="email" class="form-control" style="width: 50%" required="true" placeholder="Email"></input>
+								<input name="name" type="email" class="form-control" id="e-mail" style="width: 50%" required="true" placeholder="Email"></input>
 							</div>
 							<div class="form-group">
 								<label for="college">College</label>
-								<input name="college" type="text" class="form-control" style="width: 50%" required="true" placeholder="College"></input>
+								<input name="college" type="text" class="form-control" id="college-name" style="width: 50%" required="true" placeholder="College"></input>
 							</div>
 							<div class="form-group">Payment: &nbsp;
 								<label class="radio-inline">
@@ -355,7 +355,40 @@
 	});
 	$('.offline-radio').focus(function() {
 	$('.transaction').css({"display":"none"})
-	})
+	});
+
+
+	$('#phone-no').change(function()	{
+	if($(this).val().length == 10)
+		{getjson();}
+	else
+		{alert("Fill a valid Phone Number!");}
+	});
+	function getjson() {
+	var num=document.getElementById("phone-no").value;
+ 	 var xhttp;
+   if (window.XMLHttpRequest) {
+       xhttp = new XMLHttpRequest();
+      } else {
+    // code for IE6, IE5
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  xhttp.open("GET", "https://elementsculmyca2017.herokuapp.com/api/v1/userinfo/"+ num
+, false);  
+  xhttp.send();
+    var  jsondata= xhttp.responseText;
+    var object=JSON.parse(jsondata);
+    if(object.message != "user doesnot exist") {
+    document.getElementById('fullname').value=object.fullname;
+    document.getElementById('e-mail').value=object.email;
+    document.getElementById('college-name').value=object.college;
+    document.getElementById('fullname').disabled=true;
+    document.getElementById('e-mail').disabled=true;
+    document.getElementById('college-name').disabled=true;
+
+	}	
+
+}
 	</script>
 </body>
 </html>
