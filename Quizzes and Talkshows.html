@@ -18,8 +18,14 @@
     <script type="text/javascript">
 
     window.onload=function(){
-   	 $("#wait").css("display","block");
 
+   	 $("#wait").css("display","block");
+   	 	$("#phoneno").val('');
+  $('#fullname').val('');
+  $('#college').val('');
+  $('#email').val('');
+  $('#paymenttxnid').val('');
+  $('#paymentphoneno').val('');
           $.ajax({
 
             type: "GET",
@@ -63,7 +69,7 @@ function testphone(phone)
 {if(isNaN(phone))
   alert("Enter Phone No");
  else if(phone.length===10)
-  {$("#wait").css("display","block");
+  {$("#wait1").css("display","block");
 
     $.ajax({
 
@@ -75,7 +81,7 @@ function testphone(phone)
     //error: function() { alert('Failed!'); }
 
         }).done(function(data){
-          $("#wait").css("display","none");
+          $("#wait1").css("display","none");
           data=jQuery.makeArray(data);
           obj=JSON.parse(JSON.stringify(data));
           if(obj[0].message=='user doesnot exist')
@@ -98,7 +104,7 @@ function testphone(phone)
 
 function create()
 {
-$("#wait").css("display","block");
+$("#wait1").css("display","block");
 
 
 
@@ -120,63 +126,25 @@ var eventid=$('#eventid').val();
             url: "https://elementsculmyca2017.herokuapp.com/api/v1/register/",
             data: {phoneno:phoneno,email:email,fullname:fullname,college:college,eventid:eventid,paymenttxnid:paymenttxnid,paymentphoneno:paymentphoneno},
             
-            success: function() { alert("Success"); },
+           success: function() { alert("Success"); },
            error: function() { alert('Failed!'); }
 
 
         }).done(function(data){
-          $("#wait").css("display","none");           
+          $("#wait1").css("display","none");  
+			$('#myModal').modal('hide');
+         	 $('#myModal1').modal('toggle');  
+         	 ok();
+                 
            
         })
-      url="https://elementsculmyca2017.herokuapp.com/api/v1/registrations/"+localStorage.getItem('clubname')+"/"+eventid+"/"+localStorage.getItem('token');
-alert(url);
-         $.ajax({
-
-            type: "GET",
-            crossDomain: true,
-            dataType: 'json',
-             url: "https://elementsculmyca2017.herokuapp.com/api/v1/registrations/"+localStorage.getItem('clubname')+"/"+eventid+"/"+localStorage.getItem('token'),
-            //data: {username:username,password:password}
-            success: function() { alert("Success"); },
-            error: function() { alert('Failed!'); }
-
-        }).done(function(data){
-            var obj1=JSON.parse(JSON.stringify(data));
-            //console.log(data);
-            var l=obj1.length;
-            l=l-1;
-            var qrcode=obj1[l]._id;
-             approvepayment(phoneno,qrcode);
-
-        })
-       
-        
+      
+         
         
         
 }
 
 
-function approvepayment(phone,qrcode)
-{//alert(qrcode);
- 
- var eventid=$('#eventid').val();
-
-  $.ajax({
-
-            type: "GET",
-            crossDomain: true,
-            dataType: 'json',
-            url: "https://elementsculmyca2017.herokuapp.com/api/v1/pay/"+phone+"/"+eventid+"/"+qrcode+"/"+
-            localStorage.getItem('token')
-            //data: {username:username,password:password}
-    //success: function() { alert("Success"); },
-    //error: function() { alert('Failed!'); }
-
-        }).done(function(data){
-           ok();   
-
-        })
-}
 function ok()
   {
         $("#phoneno").val('');
@@ -258,7 +226,7 @@ function ok()
 		</div>
     </section>
 	<!--/#home-->
-	<div id="wait" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Loading..</div>
+	<div id="wait" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:40%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Loading..</div>
 
 	<section id="event" style="height: auto;background-image: url('images/23.jpg');background-position: center;
 		background-attachment: fixed;background-repeat: repeat;">
@@ -270,15 +238,32 @@ function ok()
 	</section><!--/#Events-->
 	<!-- Trigger the modal with a button -->
 
+
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="color:black">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+						<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
+						<h1><span class="modal-title">Your Registration is successful!!</span></h1>
+							
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">Ok</button>	
+						</div>	
+						
+						
+		    </div>
+		  </div>
+		</div>
+
+
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="color:black">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 						<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
+						<div id="wait1" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Loading..</div>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove" style="background-color: black;color:white"></span></button>
 						<h1><span class="modal-title">Hi, Wanna Register? Fill out this form</span></h1>
 							<form id="payment">
 							<div class="form-group">
-							<input name="eventid"  id="eventid" type="hidden" required="true" pattern="^\d{10}$" placeholder="eventid" class="form-control" style="width: 50%"
+							<input name="eventid"  id="eventid" type="hidden" required="true" pattern="^\d{10}$" placeholder="eventid" class="form-control" style="width: 50%">
 							</div>
 							<div class="form-group">
                   			<input type="hidden" class="form-control" placeholder="qr" name="qr" id="qr" />
