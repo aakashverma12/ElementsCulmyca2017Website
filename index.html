@@ -45,12 +45,12 @@
 		                </a>                    
 		            </div>
 		            <div class="collapse navbar-collapse">
-		                <ul class="nav navbar-nav navbar-right" style="transform:translateX(600px);transition: all .5s">                 
-		                    <li class="scroll active"><a href="#home">Home</a></li>
-		                    <li class="scroll"><a href="#explore">Join Us</a></li>                         
+		                <ul class="nav navbar-nav navbar-right" style="transform:translateY(-600px);transition: all .5s">                 
+		                    <li class="scroll active"><a href="#home">Home</a></li>      
 		                    <li class="scroll"><a href="#event">Events</a></li>
-		                    <li class="scroll"><a href="#about">About</a></li>        
-		                    <li class="scroll"><a href="#contact">Contact</a></li>       
+		                    <li class="scroll"><a href="#about">About</a></li>
+		                    <li class="scroll"><a href="#contact">Sponsors</a></li>        
+		                    <li class="scroll"><a href="#team">The Team</a></li>       
 		                </ul>
 		            </div>
 		        </div>
@@ -184,57 +184,19 @@
 		<a  href="http://www.google.co.in"><img src="images/google-play.png" alt="google play" class="img-responsive" id="play"></a>
 		</div>
 		<div class="col-md-6 twitter">
-		<a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/TwitterDev">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/elementsculmyca">Tweets by elementsculmyca</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</section>
 	<section id="contact">
-	</div>
-		<div class="contact-section" style="background-image: url('css/images/16.jpg');">
-			<div class="ear-piece">
-				<img class="img-responsive" src="images/ear-piece.png" alt="earpiece">
+		<div class="container">
+			<div class="col-md-4">
 			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3 col-sm-offset-4">
-						<div class="contact-text">
-							<h3>Contact</h3>
-							<address>
-								E-mail: abc@xyz.com<br>
-								Phone: +1 (123) 456 7890<br>
-								
-							</address>
-						</div>
-						<div class="contact-address">
-							<h3>Reach Us</h3>
-							<address>
-								YMCA University<br>
-								Delhi-Mathura Road,<br>
-								Faridabad, Haryana
-							</address>
-						</div>
-					</div>
-					<div class="col-sm-5 contact-form">
-						<div id="contact-section">
-							<h3>Send a message</h3>
-					    	<div class="status alert alert-success" style="display: none"></div>
-					    	<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
-					            <div class="form-group">
-					                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
-					            </div>
-					            <div class="form-group">
-					                <input type="email" name="email" class="form-control" required="required" placeholder="Email ID">
-					            </div>
-					            <div class="form-group">
-					                <textarea name="message" id="message" required="required" class="form-control" rows="4" placeholder="Enter your message"></textarea>
-					            </div>                        
-					            <div class="form-group">
-					                <button type="submit" class="btn btn-primary pull-right">Send</button>
-					            </div>
-					        </form>	       
-					    </div>
-					</div>
-				</div>
+			<div class="col-md-4">
+			<h1>Our Sponsors </h1>
+			<a href="https://www.google.com"><img class="img-responsive" src="images/Sponsor-form.png"></a>
 			</div>
-		</div>		
+			<div class="col-md-4">
+			</div>
+		</div>
 	</section>
     <!--/#contact-->
 
@@ -307,6 +269,7 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplaySpeed: 1000,
+        arrows: false
       }
     }
   ]
@@ -314,7 +277,7 @@
 	});
  	window.sr = ScrollReveal();
 	sr.reveal('#explore',{origin: 'left', distance: '200px'});
-	sr.reveal('#event',{origin: 'right', distance: '200px'});
+	sr.reveal('#event',{origin: 'left', distance: '200px'});
 	sr.reveal('#about',{origin: 'bottom', distance: '200px'});
 	sr.reveal('#Widgets',{origin: 'top', distance: '200px'});
 	sr.reveal('.contact-section',{origin: 'bottom', distance: '200px'});
@@ -330,7 +293,7 @@
 	sr.reveal('.ear-piece',{origin: 'left', distance: '200px',delay:300});
 	sr.reveal('.contact-text',{origin: 'top', distance: '200px',delay:500});
 	sr.reveal('.contact-address',{origin: 'bottom', distance: '200px',delay:600});
-	sr.reveal('.contact-form',{origin: 'right', distance: '200px',delay:800});
+	sr.reveal('.contact-form',{origin: 'top', distance: '200px',delay:800});
 	sr.reveal('.app',{origin: 'left', distance: '200px',delay:400});
 	sr.reveal('#play',{origin: 'bottom', distance: '200px',delay:600});
 	</script>

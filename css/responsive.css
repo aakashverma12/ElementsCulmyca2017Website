@@ -142,7 +142,7 @@
 
   .navbar-brand {
     width: inherit;
-  }
+  };
 
   .fixed-menu .navbar-right li a {
     padding: 7px 25px;
@@ -314,6 +314,10 @@
   .event-nav {
   font-size: 27px;
   }
+
+  .event-nav {
+  transform: translateX(-100px);
+  }
 }
 
 
@@ -476,6 +480,10 @@
   .contact-section {
     background-position: left 0 bottom 0;
     background-size: cover;
+  }
+
+  .event-nav {
+    transform: translateX(-100px);
   }
 
 }
