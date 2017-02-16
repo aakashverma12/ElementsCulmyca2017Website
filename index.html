@@ -11,7 +11,7 @@
 	<link href="css/main.min.css" rel="stylesheet">	
 	<link href="css/responsive.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="slick/slick.min.css">
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<!-- for Google -->
 	<meta name="description" content="Annual Cultural Cum Technical Fest Of YMCA University Of Science And Technology, Faridabad" />
@@ -41,7 +41,8 @@
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
 	    <script src="js/respond.min.js"></script>
-	    <![endif]-->       
+	    <![endif]-->  
+
 	</head><!--/head-->
 
 	<body style="width: 100%;background-color: #428bca;overflow-x:hidden">
@@ -169,7 +170,11 @@
 					<div class="row" style="text-align: center;padding: 2%;" id="event-text">
 						<h1 id="event-text">Our Event Categories</h1>
 					</div>
-					<div class="slider">
+					
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-1 col-sm-1 col-md-1 col-md-1"><p class="left" style="cursor: pointer; cursor: hand;"><br/><br/><br/><i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true"></i></p></div>
+							<div class="col-xs-10 col-sm-10 col-md-10 col-md-10">					<div class="slider">
 						<div><a href="Quizzes and Talkshows.html"><img src="images/event/event1.jpg" class="img-responsive">
 							<h2>Quizzes & Talk shows</h2></a></div>
 							<div><a href="Literary Events.html"><img src="images/event/event2.jpg" class="img-responsive">
@@ -195,7 +200,12 @@
 																	<div><a href="Online Publicity and Prefest Events.html"><img src="images/event/event12.jpg"
 																		class="img-responsive">
 																		<h2>Online Publicity & Prefest Events</h2></a></div>
-																	</div>
+																	</div></div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-md-1"><p class="right" style="cursor: pointer; cursor: hand;"><br/><br/><br/><i class="fa fa-chevron-circle-right fa-3x" aria-hidden="true"></i></p></div>
+						</div>
+					</div>
+
+
 																	
 																</section><!--/#event-->
 																
@@ -203,7 +213,7 @@
 																<section id="Widgets" class="container" 
 																style="background-image: url('images/20.jpg');background-position: cover;width: 100%">
 																<div class="col-md-6 app">
-																	<h1>Download The Elements Culmyca App</h1>Manage all of your culmyca's registrations at one place, <br/>Download the app now<br><br>
+																	<h1>Download The Elements Culmyca App</h1>Recieve all alerts & manage all of your culmyca's registrations at one place, <br/>Download the app now<br><br>
 																	<a  href="" onclick="alert('APP COMMING SOON')"><img src="images/google-play.png" alt="google play" class="img-responsive" id="play"></a>
 																</div>
 																<div class="col-md-6 twitter">
@@ -263,7 +273,34 @@
 																	});
 
 																	$(document).ready(function(){
+																		window.sr = ScrollReveal();
+																		sr.reveal('#explore',{origin: 'left', distance: '200px'});
+																		sr.reveal('#event',{origin: 'left', distance: '200px'});
+																		sr.reveal('#about',{origin: 'bottom', distance: '200px'});
+																		sr.reveal('#Widgets',{origin: 'top', distance: '200px'});
+																		sr.reveal('.contact-section',{origin: 'bottom', distance: '200px'});
+																		sr.reveal('.watch',{origin: 'bottom', distance: '200px', delay: 400});
+																		sr.reveal('.clocktext',{origin: 'bottom', distance: '200px', delay: 600});
+																		sr.reveal('.timer',{origin: 'bottom', distance: '200px', delay: 800});
+																		sr.reveal('#club-heading',{origin: 'top', distance: '200px', delay: 400});
+																		sr.reveal('#club-thumbnail',{origin: 'bottom', distance: '200px', delay: 600});
+																		sr.reveal('#event-text',{origin: 'top', distance: '200px', delay: 300});
+																		sr.reveal('.slider',{origin: 'bottom', distance: '200px', delay: 500});
+																		sr.reveal('.guitar2',{origin: 'left', distance: '200px', delay: 500});
+																		sr.reveal('.about-content',{origin: 'left', distance: '200px', delay: 300});
+																		sr.reveal('.ear-piece',{origin: 'left', distance: '200px',delay:300});
+																		sr.reveal('.contact-text',{origin: 'top', distance: '200px',delay:500});
+																		sr.reveal('.contact-address',{origin: 'bottom', distance: '200px',delay:600});
+																		sr.reveal('.contact-form',{origin: 'top', distance: '200px',delay:800});
+																		sr.reveal('.app',{origin: 'left', distance: '200px',delay:400});
+																		sr.reveal('#play',{origin: 'bottom', distance: '200px',delay:600});
+																	});
+																	</script>
+																	<script type="text/javascript">
+
+																		/* In the JS file */
 																		$('.slider').slick({
+																			arrows: false,
 																			slidesToShow: 4,
 																			slidesToScroll: 3,
 																			autoplay: true,
@@ -297,29 +334,15 @@
 																				}
 																			}
 																			]
-																		});
-																	});
-																	window.sr = ScrollReveal();
-																	sr.reveal('#explore',{origin: 'left', distance: '200px'});
-																	sr.reveal('#event',{origin: 'left', distance: '200px'});
-																	sr.reveal('#about',{origin: 'bottom', distance: '200px'});
-																	sr.reveal('#Widgets',{origin: 'top', distance: '200px'});
-																	sr.reveal('.contact-section',{origin: 'bottom', distance: '200px'});
-																	sr.reveal('.watch',{origin: 'bottom', distance: '200px', delay: 400});
-																	sr.reveal('.clocktext',{origin: 'bottom', distance: '200px', delay: 600});
-																	sr.reveal('.timer',{origin: 'bottom', distance: '200px', delay: 800});
-																	sr.reveal('#club-heading',{origin: 'top', distance: '200px', delay: 400});
-																	sr.reveal('#club-thumbnail',{origin: 'bottom', distance: '200px', delay: 600});
-																	sr.reveal('#event-text',{origin: 'top', distance: '200px', delay: 300});
-																	sr.reveal('.slider',{origin: 'bottom', distance: '200px', delay: 500});
-																	sr.reveal('.guitar2',{origin: 'left', distance: '200px', delay: 500});
-																	sr.reveal('.about-content',{origin: 'left', distance: '200px', delay: 300});
-																	sr.reveal('.ear-piece',{origin: 'left', distance: '200px',delay:300});
-																	sr.reveal('.contact-text',{origin: 'top', distance: '200px',delay:500});
-																	sr.reveal('.contact-address',{origin: 'bottom', distance: '200px',delay:600});
-																	sr.reveal('.contact-form',{origin: 'top', distance: '200px',delay:800});
-																	sr.reveal('.app',{origin: 'left', distance: '200px',delay:400});
-																	sr.reveal('#play',{origin: 'bottom', distance: '200px',delay:600});
-																</script>
-															</body>
-															</html>
+																		})
+
+																		$('.left').click(function(){
+																			$('.slider').slick('slickPrev');
+																		})
+
+																		$('.right').click(function(){
+																			$('.slider').slick('slickNext');
+																		})
+																	</script>
+																</body>
+																</html>
