@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Elements Culmyca | 2017 </title>
@@ -37,6 +38,9 @@
 	<!--FAVICON-->
 	<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
 	<style type="text/css">
+		.home-events{}
+	</style>
+	<style type="text/css">
 		body:before {
 			content: "";
 			display: block;
@@ -70,7 +74,7 @@
 				type: "GET",
 				crossDomain: true,
 				dataType: 'json',
-				url: "https://elementsculmyca2017.herokuapp.com/api/v1/eventlist/category/Dramatics"
+				url: "https://elementsculmyca2017.herokuapp.com/api/v1/eventlist/category/Technical Shows"
             //data: {username:username,password:password}
    //success: function() { $('body').css('display', 'block');}
     //error: function() { alert('Failed!'); }
@@ -235,6 +239,8 @@ function ok()
 
 		z-index: 99;
 	}
+
+
 </style>
 
 
@@ -266,14 +272,14 @@ function ok()
 						<a class="navbar-brand" href="index.html">
 							<img class="img-responsive" src="images/logo.png" alt="logo">
 							<div style="text-align: right;color: white;margin-right: 10px;">
-								<h2 style="margin-top:10px;" class="event-nav">Dramatics</h2>
+								<h2 style="margin-top:10px;" class="event-nav">Technical Shows</h2>
 							</div>
 						</a>                    
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right" style="transform:translateX(600px);transition: all .5s">                 
 							<li class="active"><a href="index.html" onclick="location.replace('index.html'),'_top'">Home</a></li>                       
-							<li class="scroll"><a href="#events">Dramatics Events</a></li>
+							<li class="scroll"><a href="#events">Technical Shows</a></li>
 							<li class="scroll"><a href="index.html#contact">Sponsors</a></li>        
 							<li class="scroll"><a href="team.html">The Team</a></li>       
 						</ul>
@@ -284,15 +290,15 @@ function ok()
 	</header>
 	<!--/#header--> 
 
-	<section class="container home-events" id="home-events">	
+	<section class="container home-events" id="home-events" style="background-image:url(images/technical_cover.jpg);background-position:cover;width:100%">	
 		<div class="col-md-3" style="height: 100%;">
 		</div>
 		<div class="container row" style="width: auto">
 			<div class="col-md-6" style="text-align: center;padding-top: 20%;padding-bottom: 2%
 			;">
-			<h1 style="font-size: 60px;margin-bottom: 10%">Dramatics</h1>
+			<h1 style="font-size: 60px;margin-bottom: 10%">Technical Shows</h1>
 			<br>
-			<h2>Let your fingers seize with keys and your mind with screens.</h2>
+			<h2>When theories and principles reach practicality to meliorate our lives.</h2>
 		</div>
 		<div class="col-md-12">
 			<a data-scroll href="#events">
