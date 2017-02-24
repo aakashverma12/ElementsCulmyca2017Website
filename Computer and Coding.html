@@ -99,7 +99,7 @@
 	{
 		eve+='<div class="container" style="width: 100%;padding-bottom: 2%;"><div class="col-md-4"><h1>';
 		eve+=events[i].startTime+' To '+events[i].endTime+'<br />'+events[i].venue;
-		eve+='</h1></div><div class="col-md-4" style="text-align: center;"><h1 style="font-size: 60px;">'+events[i].eventName+'</h1></div><div class="col-md-4"><h1>Organized By '+events[i].club+'</h1></div></div><div class="container" style="width: 100%;padding-bottom: 2%"><div class="col-md-4"><img src="images/jhalak.jpg" class="img-responsive"></div><div class="col-md-4">'+events[i].description+'</div><div class="col-md-4">Rules:<br>'+events[i].rules+'</div></div><div class="container"><div class="col-md-12"><button class="register-button"  data-toggle="modal" data-target="#myModal" data-id="'+events[i]._id+'" data-whatever="Snaptastic">Register</button></div></div><hr style="margin-left: -30px;width:120%">';
+		eve+='</h1></div><div class="col-md-4" style="text-align: center;"><h1 style="font-size: 60px;">'+events[i].eventName+'</h1></div><div class="col-md-4"><h1>Organized By '+events[i].club+'</h1></div></div><div class="container" style="width: 100%;padding-bottom: 2%"><div class="col-md-4"><img src="images/jhalak.jpg" class="img-responsive"></div><div class="col-md-4">'+events[i].description+'</div><div class="col-md-4">Rules:<br>'+events[i].rules+'</div></div><div class="container"><div class="col-md-12"><button class="register-button"  data-toggle="modal" data-target="#myModal" data-id="'+events[i]._id+'" data-whatever="Snaptastic">Register</button></div></div><hr style="margin-left: -10%;width:112%">';
 
 
 	}   
@@ -324,7 +324,7 @@ function ok()
 	</header>
 	<!--/#header--> 
 
-	<section class="container home-events" id="home-events" style="background-image:url(images/cyber_cover.jpg);background-position:cover;width:100%">	
+	<section class="container home-events" id="home-events" style="background-image:url(images/cyber_cover.jpg);background-position:center;width:100%">	
 		<div class="col-md-3" style="height: 100%;">
 		</div>
 		<div class="container row" style="width: auto">
@@ -471,6 +471,7 @@ background-attachment: fixed;background-repeat: repeat;">
 <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/smooth-scroll.min.js"></script>
 <script>
 	$(document).ready(function(){
 		$(".courosal").css({"transform": "translateY(-800px)"});

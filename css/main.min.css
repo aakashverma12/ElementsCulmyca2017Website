@@ -132,7 +132,7 @@ h2 {
     color: #D13D2F
 }
 
-.social-icons .fa-youtube:hover {
+.social-icons .fa-instagram:hover {
     color: #ec5538
 }
 
@@ -181,7 +181,6 @@ h2 {
 
 .fixed-event-nav {
     font-size: 27px;
-    transform: translateX(-90px)
 }
 
 .fixed-menu .navbar-right {
