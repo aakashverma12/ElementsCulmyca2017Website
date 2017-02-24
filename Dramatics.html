@@ -94,9 +94,17 @@
 
 	for(var i=0; i<events.length; i++)
 	{
+		var f=events[i].fee;
+		if(f=="No")
+		var fe="FREE";
+		else
+		{
+			var fe= f.substring(5,f.length-1); 
+		}
+
 		eve+='<div class="container" style="width: 100%;padding-bottom: 2%;"><div class="col-md-4"><h1>';
 		eve+=events[i].startTime+' To '+events[i].endTime+'<br />'+events[i].venue;
-		eve+='</h1></div><div class="col-md-4" style="text-align: center;"><h1 style="font-size: 60px;">'+events[i].eventName+'</h1></div><div class="col-md-4"><h1>Organized By '+events[i].club+'</h1></div></div><div class="container" style="width: 100%;padding-bottom: 2%"><div class="col-md-4"><img src="images/jhalak.jpg" class="img-responsive"></div><div class="col-md-4">'+events[i].description+'</div><div class="col-md-4">Rules:<br>'+events[i].rules+'</div></div><div class="container"><div class="col-md-12"><button class="register-button"  data-toggle="modal" data-target="#myModal" data-id="'+events[i]._id+'" data-whatever="Snaptastic">Register</button></div></div><hr style="margin-left: -10%;width:112%">';
+		eve+='</h1></div><div class="col-md-4" style="text-align: center;"><h1 style="font-size: 60px;">'+events[i].eventName+'</h1></div><div class="col-md-4"><h1>Fees:- '+fe+'</h1></div></div><div class="container" style="width: 100%;padding-bottom: 2%"><div class="col-md-4"><img src="images/jhalak.jpg" class="img-responsive"></div><div class="col-md-4">'+events[i].description+'</div><div class="col-md-4">Rules:<br>'+events[i].rules+'</div></div><div class="container"><div class="col-md-12"><button class="register-button"  data-toggle="modal" data-target="#myModal" data-id="'+events[i]._id+'" data-whatever="Snaptastic">Register</button></div></div><hr style="margin-left: -10%;width:112%">';
 
 
 	}   
@@ -167,12 +175,35 @@ function create()
 
 
 	var eventid=$('#eventid').val();
-
-
+  var letters = /^[a-zA-Z\s]*$/; 
+   if(fullname.match(letters))
+   {
+   		var fn="valid";
+   }
+   else 
+   {
+   	    var fn="notvalid";
+   }
+   if(college.match(letters))
+   {
+   		var cl="valid";
+   }
+   else 
+   {
+   	    var cl="notvalid";
+   }
+   if(isNaN(phoneno))
+   {
+   	var pp="notvalid";
+   }
+   else
+   {
+   	var pp="valid";
+   }
 	var atpos = email.indexOf("@");
 	var dotpos = email.lastIndexOf(".");
 
-	if(phoneno!='' && email!='' && fullname!='' && college!='')
+if(phoneno!='' && email!='' && fullname!='' && college!='' && atpos>=1 && dotpos>=atpos+2 && dotpos+2<email.length && phoneno.length>=10 && fullname.length<=30 && fn=="valid" && pp=="valid" && cl=="valid")
 	{ 
 
 		$("#wait2").css("display","block");
@@ -213,7 +244,33 @@ function create()
    }
    else
    {
-   	alert("Fill all the fields!!")
+   	if(phoneno=='' || email=='' || fullname=='' || college=='')
+   	{
+   		document.getElementById("wr").innerHTML="Fill all the fields!!";   
+   		$(".alert").css("display","block");  
+	}
+	else if(phoneno.length<10 || pp=="notvalid")
+	{
+		document.getElementById("wr").innerHTML="Enter Valid Phone No.!!";   
+   		$(".alert").css("display","block");  
+	}
+	else if(fullname.length>30 || fn=="notvalid")
+	{
+		document.getElementById("wr").innerHTML="Enter Valid Full Name!!";   
+   		$(".alert").css("display","block");  
+	}
+	else if(cl=="notvalid")
+	{
+		document.getElementById("wr").innerHTML="Enter Valid College Name!!";   
+   		$(".alert").css("display","block");  
+	}
+   	else if(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length)
+   	{
+   		document.getElementById("wr").innerHTML="Enter Valid Email id!!";   
+   		$(".alert").css("display","block");  
+   	}
+   
+   	
    }
 
 
@@ -228,9 +285,11 @@ function ok()
 	$('#email').val('');
 	$('#paymenttxnid').val('');
 	$('#paymentphoneno').val('');
+	$(".alert").css("display","none"); 
 
 
 }
+
 
 
 
@@ -360,6 +419,9 @@ background-attachment: fixed;background-repeat: repeat;">
 		<div class="modal-content">
 			<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
 				<h1><span class="modal-title">Your Registration is successful!!</span></h1>
+				<h3><span class="modal-title">We have sent an Eticket on your email, you need to bring the ticket on the event side.</span></h3>
+				<h3><span class="modal-title">You need not to print the ticket, you can show us the softcopy.</span></h3>
+				<h3><span class="modal-title">Please check your email's spam folder, if you don't receive the email.</span></h3>
 
 				<button type="button"  style="background-color:#4858b1;color:white;margin-left:500px;" data-dismiss="modal" aria-label="Close">Ok</button>	
 			</div>	
@@ -387,7 +449,10 @@ background-attachment: fixed;background-repeat: repeat;">
 						<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
 						<div id="wait1" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Fetching User Information...</div>
 						<div id="wait2" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Registering...</div>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove" style="background-color: black;color:white"></span></button>
+						<div class="alert alert-warning" style="display:none;">
+  					<strong>Warning!</strong><span id="wr"> Indicates a warning that might need attention.</span>
+					</div>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="ok();"><span aria-hidden="true" class="glyphicon glyphicon-remove" style="background-color: black;color:white"></span></button>
 						<h1><span class="modal-title">Register</span></h1>
 							
 							<div class="form-group">
@@ -413,14 +478,7 @@ background-attachment: fixed;background-repeat: repeat;">
 								<label for="college">College</label>
 								<input type="text" class="form-control" placeholder="College" name="college" id="college" style="width: 50%" required="true">
 							</div>
-							<div class="form-group">Payment: &nbsp;
-								<label class="radio-inline">
-									<input type="radio" name="payment" class="online-radio">Online
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="payment" class="offline-radio">Offline
-								</label>
-							</div><br>
+							<br>
 							<div class="form-group transaction" style="display: none">
 								<label for="Transaction">Transaction Id</label>
 								<input type="text" class="form-control" placeholder="Payment Transaction Id" name="paymenttxnid" id="paymenttxnid" style="width: 50%">
@@ -440,8 +498,9 @@ background-attachment: fixed;background-repeat: repeat;">
 		    </div>
 		  </div>
 
-				<button type="button"  style="background-color:#4858b1;color:white;margin-left:400px;" data-dismiss="modal" aria-label="Close">Ok</button>	
+				<button type="button"  style="background-color:#4858b1;color:white;margin-left:400px;" data-dismiss="modal" aria-label="Close" onclick="ok();">Cancel</button>	
 			</div>	
+
 
 
 
