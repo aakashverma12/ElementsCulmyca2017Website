@@ -2,7 +2,7 @@ jQuery(function($) {'use strict',
 	
 	//Countdown js
 	 $("#countdown").countdown({
-			date: "16 March 2017 11:59:59",
+			date: "23 March 2017 11:59:59",
 			format: "on"
 		},
 		

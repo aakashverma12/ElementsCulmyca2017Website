@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-92562312-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Elements Culmyca | 2017 </title>
@@ -24,7 +34,7 @@
 	<meta property="og:type"               content="article" />
 	<meta property="og:title"              content="Elements Culmyca 2017" />
 	<meta property="og:description"        content="Annual Cultural Cum Technical Fest Of YMCA University Of Science And Technology, Faridabad" />
-	<meta property="og:image"              content="http://www.elementsculmyca.com/images/logo.png" />
+	<meta property="og:image"              content="http://www.elementsculmyca.com/images/facebook-cover.png" />
 	<meta property="og:site_name"          content="Culmyca17" />
 	<meta property="fb:app_id"             content="" />
 	<!-- for Twitter -->
@@ -227,20 +237,47 @@ function ok()
 </script>
 <style type="text/css">
 	.preloader {
-		position: fixed;
-		top:50%;
-		left:50%;
-		width: 100%;
-		height: 100%;
-
-		z-index: 99;
+	    
+	    background-color:#000;
+	    position:fixed;
+	    width:100%;
+	    height:100%;
+	    top:0px;
+	    left:0px;
+	    z-index:1000;
 	}
+	.preloader_image{
+		  border:1px solid #dedede;
+          background-color: #fff;
+          border-radius: 8px;
+          margin: 0 auto;
+          padding: 30px;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+	}
+	.err-label{
+		color: #000;
+        display: block;
+        margin:0 auto;
+        padding: 7px;
+        border-radius: 4px;
+	}
+
 </style>
 
 
 </head>
 <div class="preloader">
+	<div class="preloader_image">
+	<center>
 	<img src="loader.gif" alt="Preloader image">
+	</center>
+		<span class="err-label">Loading Events...</span>
+
+	</div>
+	<br/>
 </div>
 
 <body style="width: 100%;background-color: #428bca;overflow-x:hidden;">
@@ -292,7 +329,7 @@ function ok()
 			;">
 			<h1 style="font-size: 60px;margin-bottom: 10%">Dramatics</h1>
 			<br>
-			<h2>You act for a comfortable life, we perform for a beautiful one.</h2>
+			<h2>Let your fingers seize with keys and your mind with screens.</h2>
 		</div>
 		<div class="col-md-12">
 			<a data-scroll href="#events">

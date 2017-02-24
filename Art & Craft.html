@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+		ga('create', 'UA-92562312-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Elements Culmyca | 2017 </title>
@@ -25,7 +34,7 @@
 	<meta property="og:type"               content="article" />
 	<meta property="og:title"              content="Elements Culmyca 2017" />
 	<meta property="og:description"        content="Annual Cultural Cum Technical Fest Of YMCA University Of Science And Technology, Faridabad" />
-	<meta property="og:image"              content="http://www.elementsculmyca.com/images/logo.png" />
+	<meta property="og:image"              content="http://www.elementsculmyca.com/images/facebook-cover.png" />
 	<meta property="og:site_name"          content="Culmyca17" />
 	<meta property="fb:app_id"             content="" />
 	<!-- for Twitter -->
@@ -148,7 +157,7 @@ function testphone(phone)
 
 function create()
 {
- 
+	
 
 	var phoneno=$("#phoneno").val();
 	var email= $("#email").val();
@@ -231,22 +240,47 @@ function ok()
 </script>
 <style type="text/css">
 	.preloader {
-		position: fixed;
-		top:50%;
-		left:50%;
-		width: 100%;
-		height: 100%;
-
-		z-index: 99;
+		
+		background-color:#000;
+		position:fixed;
+		width:100%;
+		height:100%;
+		top:0px;
+		left:0px;
+		z-index:1000;
 	}
-
+	.preloader_image{
+		border:1px solid #dedede;
+		background-color: #fff;
+		border-radius: 8px;
+		margin: 0 auto;
+		padding: 30px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.err-label{
+		color: #000;
+		display: block;
+		margin:0 auto;
+		padding: 7px;
+		border-radius: 4px;
+	}
 
 </style>
 
 
 </head>
 <div class="preloader">
-	<img src="loader.gif" alt="Preloader image">
+	<div class="preloader_image">
+		<center>
+			<img src="loader.gif" alt="Preloader image">
+		</center>
+		<span class="err-label">Loading Events...</span>
+
+	</div>
+	<br/>
 </div>
 
 <body style="width: 100%;background-color: #428bca;overflow-x:hidden;">
@@ -256,9 +290,9 @@ function ok()
 			<div class="container">
 				<div class="header-top">
 					<div class="pull-right social-icons">
-							<a href="https://facebook.com/culmyca"><i class="fa fa-facebook"></i></a>
-							<a href="https://twitter.com/elementsculmyca"><i class="fa fa-twitter"></i></a>
-							<a href="https://instagram.com/elementsculmyca"><i class="fa fa-instagram"></i></a>
+						<a href="https://facebook.com/culmyca"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/elementsculmyca"><i class="fa fa-twitter"></i></a>
+						<a href="https://instagram.com/elementsculmyca"><i class="fa fa-instagram"></i></a>
 					</div>
 				</div>     
 				<div class="row">	        		
@@ -343,74 +377,74 @@ background-attachment: fixed;background-repeat: repeat;">
 		<div class="modal-content">
 			<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
 				<h1><span class="modal-title">You Already Have been Registered!!</span></h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="color:black">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
+				<div id="wait1" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Fetching User Information...</div>
+				<div id="wait2" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Registering...</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove" style="background-color: black;color:white"></span></button>
+				<h1><span class="modal-title">Register</span></h1>
+				
+				<div class="form-group">
+					<input name="eventid"  id="eventid" type="hidden" required="true" pattern="^\d{10}$" placeholder="eventid" class="form-control" style="width: 50%">
 				</div>
-		</div>
-		</div>
-		</div>
+				<div class="form-group">
+					<input type="hidden" class="form-control" placeholder="qr" name="qr" id="qr" />
+				</div>
+				<div class="form-group">
+					<label for="Phone-number">Phone Number</label> 
+					<input type="text" class="form-control" placeholder="Phone No." name="phoneno" id="phoneno" onkeyup="testphone(this.value);" maxlength="10" style="width: 50%">
+					
+				</div>
+				<div class="form-group">
+					<label for="Name">Full Name</label>
+					<input type="text" class="form-control" placeholder="Full Name" name="fullname" id="fullname" style="width: 50%" required="true">
+				</div>
+				<div class="form-group">
+					<label for="Email">Email</label>
+					<input type="text" class="form-control" placeholder="Email" name="email" id="email" style="width: 50%">
+				</div>
+				<div class="form-group">
+					<label for="college">College</label>
+					<input type="text" class="form-control" placeholder="College" name="college" id="college" style="width: 50%" required="true">
+				</div>
+				<div class="form-group">Payment: &nbsp;
+					<label class="radio-inline">
+						<input type="radio" name="payment" class="online-radio">Online
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="payment" class="offline-radio">Offline
+					</label>
+				</div><br>
+				<div class="form-group transaction" style="display: none">
+					<label for="Transaction">Transaction Id</label>
+					<input type="text" class="form-control" placeholder="Payment Transaction Id" name="paymenttxnid" id="paymenttxnid" style="width: 50%">
+					<br>
+				</div>
+				<div class="form-group transaction" style="display: none">
+					<label>Payment Phone No</label>
+					<input type="text" class="form-control" placeholder="Payment Phone No." name="paymentphoneno" id="paymentphoneno" style="width: 50%">
+					<br>
+				</div>
+				<button class="btn-primary btn-lg" id="submit-btn" style="background-color: #4858b1;
+				border: 0px solid red;transition: all .2s" onclick="create()">
+				Register
+			</button>
+			
+		</div>	
+	</div>
+</div>
 
-
-
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="color:black">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-						<div class="col-md-12 form-group" id="form" style="background-color: rgba(68, 25, 80, 0.9);color:white;padding: 5%">
-						<div id="wait1" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Fetching User Information...</div>
-						<div id="wait2" style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:30%;left:50%;padding:2px;"><img src='loaderimage.gif' width="64" height="64" /><br>Registering...</div>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove" style="background-color: black;color:white"></span></button>
-						<h1><span class="modal-title">Register</span></h1>
-							
-							<div class="form-group">
-							<input name="eventid"  id="eventid" type="hidden" required="true" pattern="^\d{10}$" placeholder="eventid" class="form-control" style="width: 50%">
-							</div>
-							<div class="form-group">
-                  			<input type="hidden" class="form-control" placeholder="qr" name="qr" id="qr" />
-                			</div>
-							<div class="form-group">
-								<label for="Phone-number">Phone Number</label> 
-								<input type="text" class="form-control" placeholder="Phone No." name="phoneno" id="phoneno" onkeyup="testphone(this.value);" maxlength="10" style="width: 50%">
-						
-							</div>
-							<div class="form-group">
-								<label for="Name">Full Name</label>
-								<input type="text" class="form-control" placeholder="Full Name" name="fullname" id="fullname" style="width: 50%" required="true">
-							</div>
-							<div class="form-group">
-								<label for="Email">Email</label>
-								<input type="text" class="form-control" placeholder="Email" name="email" id="email" style="width: 50%">
-							</div>
-							<div class="form-group">
-								<label for="college">College</label>
-								<input type="text" class="form-control" placeholder="College" name="college" id="college" style="width: 50%" required="true">
-							</div>
-							<div class="form-group">Payment: &nbsp;
-								<label class="radio-inline">
-									<input type="radio" name="payment" class="online-radio">Online
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="payment" class="offline-radio">Offline
-								</label>
-							</div><br>
-							<div class="form-group transaction" style="display: none">
-								<label for="Transaction">Transaction Id</label>
-								<input type="text" class="form-control" placeholder="Payment Transaction Id" name="paymenttxnid" id="paymenttxnid" style="width: 50%">
-								<br>
-							</div>
-							<div class="form-group transaction" style="display: none">
-								<label>Payment Phone No</label>
-								<input type="text" class="form-control" placeholder="Payment Phone No." name="paymentphoneno" id="paymentphoneno" style="width: 50%">
-								<br>
-							</div>
-							<button class="btn-primary btn-lg" id="submit-btn" style="background-color: #4858b1;
-							border: 0px solid red;transition: all .2s" onclick="create()">
-								Register
-							</button>
-							
-						</div>	
-		    </div>
-		  </div>
-
-				<button type="button"  style="background-color:#4858b1;color:white;margin-left:400px;" data-dismiss="modal" aria-label="Close">Ok</button>	
-			</div>	
+<button type="button"  style="background-color:#4858b1;color:white;margin-left:400px;" data-dismiss="modal" aria-label="Close">Ok</button>	
+</div>	
 
 
 
